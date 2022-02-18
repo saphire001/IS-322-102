@@ -14,7 +14,6 @@ const mockDatabase = [
 //Renders current selection of the products into DOM
 function renderList (results){
     const productDiv = document.querySelector('#products');
-
     // Clear out inner HTML to get rid of any older results 
     productDiv.innerHTML = ''; 
     // Map weach database record to a string containing the HTML for it's record
