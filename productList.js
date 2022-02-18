@@ -1,13 +1,14 @@
 const mockDatabase = [
-    { _id: '123', name: 'Article 1', published: true },
-    { _id: '583', name: 'Article 2', published: true },
-    { _id: '954', name: 'Article 3', published: false },
-    { _id: '384', name: 'Article 4', published: false },
-    { _id: '183', name: 'Article 5', published: true },
-    { _id: '007', name: 'Article 6', published: false },
-    { _id: '304', name: 'Article 7', published: true },
-    { _id: '729', name: 'Article 8', published: false },
-    { _id: '734', name: 'Article 9', published: true },
+    { _id: '588', name: 'Love Yourself: Tear', published: true },
+    { _id: '511', name: 'The Chaos Chapter: Freeze', published: true },
+    { _id: '761', name: 'BTS, The Best', published: false },
+    { _id: '580', name: 'The Dream Chapter: Eterinty', published: false },
+    { _id: '006', name: 'Wings', published: true },
+    { _id: '787', name: 'The War', published: false },
+    { _id: '179', name: 'Obsession', published: true },
+    { _id: '633', name: 'XOXO', published: false },
+    { _id: '940', name: 'In Life', published: true },
+    { _id: '831', name: 'No Easy', published: false},
 ];
 
 //Renders current selection of the products into DOM
@@ -37,7 +38,7 @@ function togglePublished (showPublished) {
 }
 
 document.querySelector('#published')
-    .addEventListener('cahnge', (event) => {
+    .addEventListener('change', (event) => {
         // event.target.value contains current value of form input 
         const value = event.target.value == 'true'; 
         togglePublished(value); 
