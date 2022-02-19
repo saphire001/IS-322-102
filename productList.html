@@ -12,19 +12,19 @@
         <div class="container">
             <h2 class="text-center">Product Page</h2>
 
-            <div class="filer-container">
-                <select id="published"> 
-                    <option value="true">True</option>
-                    <option value="false">False</option>
+            <div class="form-group" style="margin-right: 20px;">
+                <label for="orderBy">Order By</label>
+                <select id="orderBy" name="orderBy">
+                    <option value="name">Name</option>
+                    <option value="_id">Price L>G</option>
                 </select>
             </div>
 
-            <div class="filter-container">
-                <select id="group">
-                    <option value="BTS">BTS</option>
-                    <option value="TXT">TXT</option>
-                    <option value="EXO">EXO</option>
-                    <option value="SK">Stray Kids</option>
+            <div class="form-group">
+                <label for="published">Show Unpublished?</label>	
+                <select id="published" name="published">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
                 </select>
             </div>
 

@@ -1,14 +1,14 @@
 const mockDatabase = [
-    { _id: '588', name: 'Love Yourself: Tear', published: true, group: BTS},
-    { _id: '511', name: 'The Chaos Chapter: Freeze', published: true, group: TXT},
-    { _id: '761', name: 'BTS, The Best', published: false, group: BTS},
-    { _id: '580', name: 'The Dream Chapter: Eterinty', published: false, group: TXT},
-    { _id: '006', name: 'Wings', published: true, group: BTS},
-    { _id: '787', name: 'The War', published: false, group: EXO},
-    { _id: '179', name: 'Obsession', published: true, group: EXO},
-    { _id: '633', name: 'XOXO', published: false, group: EXO},
-    { _id: '940', name: 'In Life', published: true, group: SK},
-    { _id: '831', name: 'No Easy', published: false, group: SK},
+    { _id: '2500', name: 'Love Yourself: Tear', published: true},
+    { _id: '2000', name: 'The Chaos Chapter: Freeze', published: true},
+    { _id: '2001', name: 'BTS, The Best', published: false},
+    { _id: '2002', name: 'The Dream Chapter: Eterinty', published: false},
+    { _id: '2500', name: 'Wings', published: true},
+    { _id: '1500', name: 'The War', published: false},
+    { _id: '1501', name: 'Obsession', published: true},
+    { _id: '1502', name: 'XOXO', published: false},
+    { _id: '1000', name: 'In Life', published: true},
+    { _id: '1001', name: 'No Easy', published: false},
 ];
 
 //Renders current selection of the products into DOM
