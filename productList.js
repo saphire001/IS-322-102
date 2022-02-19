@@ -29,6 +29,25 @@ function renderList (results){
 // Call Renderlist with initial database for initial list of products
 renderList(mockDatabase); 
 
+function Order(val){
+    var res = (val === 'name') ? 
+        mockDatabase.sort(function(x,y){
+            var nx = x.name.toLowerCase();
+            var ny = y.name.toLowerCase(); 
+
+            if (nx < ny) {
+                return -1;
+            }
+            if (nx > ny) {
+                return 1;
+            }
+        }) : 
+        mockDatabase.sort(function (x, y) { 
+            return x[val] - x[val];
+        });
+    renderList(res);
+}
+
 function togglePublished (showPublished) {
     const filteredResults = mockDatabase.filter((result) => {
         return showPublished || result.published;
@@ -41,4 +60,9 @@ document.querySelector('#published')
         // event.target.value contains current value of form input 
         const value = event.target.value == 'true'; 
         togglePublished(value); 
+    });
+
+document.querySelector('#Order')
+    .addEventListener('change', (event) => {
+        Order(event.target.value)
     });
