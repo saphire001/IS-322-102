@@ -1,33 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>E-commerce Site</title>
-
-        <!-- CSS only -->
+<!DOCTYPE>
+<html>
+	<head>
+		<title>E-commerce Site</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="productList.css">
-    </head>
-    <body>
-        <div class="container">
-            <h2 class="text-center">Product Page</h2>
+		<link rel="stylesheet" type="text/css" href="productList.css">
+	</head>
+	<body>
+		<h2 class="text-center">Product Page</h2>
+		<div class="container" id="page">
 
-            <div class="form-group" style="margin-right: 20px;">
-                <label for="orderBy">Order By</label>
-                <select id="orderBy" name="orderBy">
-                    <option value="name">Name</option>
-                    <option value="_id">Price L>G</option>
-                </select>
-            </div>
+			<div class="filter">
 
-            <div class="form-group">
-                <label for="published">Show Unpublished?</label>	
-                <select id="published" name="published">
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-                </select>
-            </div>
+				<div class="form-group" style="margin-right: 20px;">
+					<label for="orderBy">Order</label>
+					<select id="orderBy" name="orderBy">
+						<option value="name">Album</option>
+						<option value="_id">Price</option>
+					</select>
+				</div>
 
+				<div class="form-group">
+					<label for="published">Unpublished Too?</label>	
+					<select id="published" name="published">
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+				</div>
+
+			</div>
+
+			<table id="results-table" border="1">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						
+					</tr>
+				</thead>
+
+				<!-- Results will be added through JavaScript -->
+				<tbody></tbody>
+			</table>
             <div id="products"></div>
             <!--Love Yourself: Tear-->
             <div class="card">
@@ -43,13 +55,13 @@
             </div>
             <!--BTS, The Best-->
             <div class="card">
-                <h3>The Chaos Chapter: Freeze</h3>
-                <img src="Images/TCCF.png" alt="TCC:F" style="width:100%">
-                <p class="price">$20.00</p>
+                <h3>BTS, The Best</h3>
+                <img src="Images/BTB.jpeg" alt="B,TB" style="width:100%">
+                <p class="price">$25.00</p>
             </div>
             <!--The Dream Chapter: Eterinty-->
             <div class="card">
-                <h3>The Dream Chapter: Eterinty/h3>
+                <h3>The Dream Chapter: Eterinty<h3>
                 <img src="Images/TDCE.jpeg" alt="TDC:E" style="width:100%">
                 <p class="price">$20.00</p>
             </div>
@@ -91,5 +103,5 @@
             </div>
         </div>
         <script src="productList.js"></script>
-    </body>
-</html> 
+	</body>
+</html>

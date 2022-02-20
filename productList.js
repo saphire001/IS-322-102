@@ -1,68 +1,72 @@
-const mockDatabase = [
-    { _id: '2500', name: 'Love Yourself: Tear', published: true},
-    { _id: '2000', name: 'The Chaos Chapter: Freeze', published: true},
-    { _id: '2001', name: 'BTS, The Best', published: false},
-    { _id: '2002', name: 'The Dream Chapter: Eterinty', published: false},
-    { _id: '2500', name: 'Wings', published: true},
-    { _id: '1500', name: 'The War', published: false},
-    { _id: '1501', name: 'Obsession', published: true},
-    { _id: '1502', name: 'XOXO', published: false},
-    { _id: '1000', name: 'In Life', published: true},
-    { _id: '1001', name: 'No Easy', published: false},
-];
+var Ran = 'Ran'; 
+(function () { 
+	var Ran = 'Ran';
+	console.log(Ran); 
+	console.log(window.Ran); 
 
-//Renders current selection of the products into DOM
-function renderList (results){
-    const productDiv = document.querySelector('#products');
-    // Clear out inner HTML to get rid of any older results 
-    productDiv.innerHTML = ''; 
-    // Map weach database record to a string containing the HTML for it's record
-    const products = results.map((result, number) => {
-        return '<div>' + result.name + '</div>';
-    });
-    // Set the contents of the list to the new set of render HTML products
-    products.forEach((item) => {
-      productDiv.innerHTML += item;  
-    });  
-}
+	const mockDatabase = [
+		{ _id: '2500', name: 'Love Yourself: Tear', published: true},
+		{ _id: '2000', name: 'The Chaos Chapter: Freeze', published: true},
+		{ _id: '2500', name: 'BTS, The Best', published: false},
+		{ _id: '2000', name: 'The Dream Chapter: Eterinty', published: false},
+		{ _id: '2500', name: 'Wings', published: true},
+		{ _id: '1500', name: 'The War', published: false},
+		{ _id: '1500', name: 'Obsession', published: true},
+		{ _id: '1500', name: 'XOXO', published: false},
+		{ _id: '1000', name: 'In Life', published: true},
+		{ _id: '1000', name: 'No Easy', published: false},
+	];
 
-// Call Renderlist with initial database for initial list of products
-renderList(mockDatabase); 
+	function renderList (results) {
+		var tableBody = document.querySelector('#results-table tbody');
 
-function Order(val){
-    var res = (val === 'name') ? 
-        mockDatabase.sort(function(x,y){
-            var nx = x.name.toLowerCase();
-            var ny = y.name.toLowerCase(); 
+		tableBody.innerHTML = '';
+		var tableRows = results.map(function (result, index) {
+			return '<tr><td>' + result.name +'</td></tr>';
+		});
+		tableRows.forEach(function (row) {
+			tableBody.innerHTML += row; 
+		});
+		var Ran = 'renderList';
+		console.log(Ran); 
+	}
 
-            if (nx < ny) {
-                return -1;
-            }
-            if (nx > ny) {
-                return 1;
-            }
-        }) : 
-        mockDatabase.sort(function (x, y) { 
-            return x[val] - x[val];
-        });
-    renderList(res);
-}
+	renderList(mockDatabase);
 
-function togglePublished (showPublished) {
-    const filteredResults = mockDatabase.filter((result) => {
-        return showPublished || result.published;
-    });
-    renderList(filteredResults); 
-}
+	function orderBy(sV) {
+		
+		var sR = (sV === 'name') ? 
+			mockDatabase.sort(function (x, y) { 
+				var nx = x.name.toUpperCase(); 
+				var ny = y.name.toUpperCase(); 	
+				if (nx < ny) {
+				    return -1;
+				}
+				if (nx > ny) {
+				    return 1;
+				}
+			}) : 
+			mockDatabase.sort(function (l, m) {  
+				return l[sV] - m[sV];
+			});
+		renderList(sR);
+	}
+	document.querySelector('#orderBy').addEventListener('change', function(event){
+		orderBy(event.target.value);
+	});
 
-document.querySelector('#published')
-    .addEventListener('change', (event) => {
-        // event.target.value contains current value of form input 
-        const value = event.target.value == 'true'; 
-        togglePublished(value); 
-    });
+	function togglePublished(sP) {
+		var fR = mockDatabase.filter(function (result) {
+			return sP || result.published;
+		});
+		renderList(fR);
+	}
+	
+	document.querySelector('#published').addEventListener('change', function(event){
+		var value = event.target.value === 'true';
+		togglePublished(value);
+	});
 
-document.querySelector('#Order')
-    .addEventListener('change', (event) => {
-        Order(event.target.value)
-    });
+
+
+})(); 
