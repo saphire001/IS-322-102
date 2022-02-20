@@ -16,7 +16,7 @@
   }
   
   .price {
-    color: grey;
+    color: rgb(123, 104, 231);
     font-size: 22px;
   }
 
@@ -44,20 +44,9 @@
    font-size: 2;
  }
 
- .carousel {
-   max-width: 1000px;
-   position: relative;
-   margin: auto;
- }
- 
- .container{
-   display: none;
- }
-
- .dots{
-   cursor: pointer;
-   height: 10;
-   width: 10%;
-   display: inline-block;
-
+ .About{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  padding: auto;
  }
