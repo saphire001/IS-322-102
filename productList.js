@@ -18,14 +18,14 @@ var Ran = 'Ran';
 	];
 
 	function renderList (results) {
-		var tableBody = document.querySelector('#results-table tbody');
+		var tB = document.querySelector('#results-table tbody');
 
-		tableBody.innerHTML = '';
-		var tableRows = results.map(function (result, index) {
+		tB.innerHTML = '';
+		var tR = results.map(function (result, index) {
 			return '<tr><td>' + result.name +'</td></tr>';
 		});
-		tableRows.forEach(function (row) {
-			tableBody.innerHTML += row; 
+		tR.forEach(function (row) {
+			tB.innerHTML += row; 
 		});
 		var Ran = 'renderList';
 		console.log(Ran); 
